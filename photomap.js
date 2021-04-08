@@ -8,7 +8,6 @@
     
     Name        A short name for the location, to appear as the popup title.
     Description A sentence or two describing the location in more detail.
-    Icon_Color  The marker color.
     Lat         Latitude in decimal degrees
     Long        Longitude in decimal degrees
     Pic_url     The URL to an image that will be displayed in the popup.
