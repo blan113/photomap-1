@@ -6,11 +6,12 @@
     This script assumes the Google Sheet has the following columns. These match
     the attribute names used for the Story Map Tour template in ArcGIS Online.
     
-    name        A short name for the location, to appear as the popup title.
-    description A sentence or two describing the location in more detail.
-    lat         Latitude in decimal degrees
-    long        Longitude in decimal degrees
-    pic_url     The URL to an image that will be displayed in the popup.
+    Name        A short name for the location, to appear as the popup title.
+    Description A sentence or two describing the location in more detail.
+    Icon_Color  The marker color.
+    Lat         Latitude in decimal degrees
+    Long        Longitude in decimal degrees
+    Pic_url     The URL to an image that will be displayed in the popup.
  */
 function createPhotoMap () {
   // URL of a Google Sheets spreadsheet output as CSV
@@ -40,13 +41,13 @@ function createPhotoMap () {
       // go through each row of the CSV to save the values to a marker
       for (row in csv.data) {
         place = csv.data[row];
-        marker = L.marker([place.lat, place.long])
-          .bindTooltip(place.name, {permanent: true}) // show labels by default
+        marker = L.marker([place.Lat, place.Long])
+          .bindTooltip(place.Name, {permanent: true}) // show labels by default
           .addTo(markersLayer);
         marker.properties = {
-          name: place.name,
-          description: place.description,
-          pic_url: place.pic_url
+          Name: place.Name,
+          Description: place.Description,
+          Pic_url: place.Pic_url
         };
         
       } // end of for (row in csv.data) {...
