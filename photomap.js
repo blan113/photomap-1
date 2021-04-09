@@ -55,8 +55,8 @@ function createPhotoMap () {
       markersLayer.on("click", function(event) {
         var place = event.layer.properties;
         $('.modal').modal('show');
-        $('.modal-title').html(place.name)
-        $('.modal-body').html(place.description + '<br><img src="' + place.pic_url + '">')
+        $('.modal-title').html(place.Name)
+        $('.modal-body').html(place.Description + '<br><img src="' + place.Pic_url + '">')
       });
       
     } // end of complete: function(csv) {...
